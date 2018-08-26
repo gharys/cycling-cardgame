@@ -140,7 +140,7 @@ data['text'].each { |s| text_sub(s) }
 
 Squib::Deck.new cards: data['name'].size, layout: 'cyclist_layout.yml',
                 width: 825, height: 1125 do
-  rect layout: 'all', fill_color: 'white', stroke_color: 'white'
+  background color: 'white'
   rect layout: 'cut' # cut line as defined by TheGameCrafter
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
   text str: data['name'], layout: 'title'
@@ -164,7 +164,7 @@ data['speed'].map! { |s| speed_sub(s) }
 
 Squib::Deck.new cards: data['name'].size, layout: 'group_layout.yml',
                 width: 825, height: 1125 do
-  rect layout: 'all', fill_color: 'white', stroke_color: 'white'
+  background color: 'white'
   rect layout: 'cut' # cut line as defined by TheGameCrafter
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
   text str: data['name'], layout: 'title'
@@ -189,7 +189,7 @@ data['phase'].map! { |str| GameIcons.get(str).string }
 
 Squib::Deck.new cards: data['title'].size, layout: 'stage_phase_layout.yml',
               width: 825, height: 1125 do
-  rect layout: 'all', fill_color: 'white', stroke_color: 'white'
+  background color: 'white'
   rect layout: 'cut' # cut line as defined by TheGameCrafter
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
   
@@ -205,20 +205,34 @@ end
 
 data = Squib.csv file: 'events.csv'
 data['heading'].each { |s| text_sub(s) }
-data['player'].each { |s| text_sub(s) }
 data['description'].each { |s| text_sub(s) }
 data['pickup'].each { |s| text_sub(s) }
+pcolors = Array.new(data["heading"].size(), "#fff")
+for i in (0...pcolors.length)
+  s = data['player'][i]
+  if s.nil?
+    pcolors[i] = "#fff"
+  elsif s.start_with? "{c"
+    pcolors[i] = "#fde"
+  elsif s.start_with? "{nc"
+    pcolors[i] = "#2F2"
+  else
+    pcolors[i] = "#fde"
+  end
+end
+data['player'].each { |s| text_sub(s) }
+
 
 Squib::Deck.new cards: data['heading'].size, layout: 'event_layout.yml',
               width: 825, height: 1125 do
-  # rect layout: 'all', fill_color: 'white', stroke_color: 'white'
+  background color: 'white'
   rect layout: 'cut' # cut line as defined by TheGameCrafter
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
   
   text str: data["title"], layout: 'title'
   rect layout: 'heading', fill_color: 'yellow', stroke_color: 'yellow'
   text(str: data['heading'], layout: 'heading', markup: true)   { |e| images(e, image_text_size_12) }
-  rect layout: 'player', fill_color: data['pcolor'], stroke_color: data['pcolor']
+  rect layout: 'player', fill_color: pcolors, stroke_color: pcolors
   text(str: data['player'], layout: 'player', markup: true)   { |e| images(e, image_text_size_12) }
   text(str: data['description'], layout: 'description', markup: true)   { |e| images(e, image_text_size_8) }
   rect layout: 'extrabox'
@@ -228,10 +242,11 @@ Squib::Deck.new cards: data['heading'].size, layout: 'event_layout.yml',
   save_png prefix: "event_"
 end
 
+
 data = Squib.csv file: 'backgrounds.csv'
 Squib::Deck.new cards: data['art'].size, layout: 'background_layout.yml',
             width: 825, height: 1125 do
-  rect layout: 'all', fill_color: 'white', stroke_color: 'white'
+  background color: 'white'
   rect layout: 'cut' # cut line as defined by TheGameCrafter
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
 

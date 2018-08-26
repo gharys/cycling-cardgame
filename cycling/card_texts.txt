@@ -23,7 +23,7 @@
 :exhaust: :exhaust: :exhaust:
 ==/==
 ************ PLAYER CONTRIBUTIONS TO GROUPS ************** 
-==c0== 
+==c0==
 ==c1==
 :exhaust:	:cycler_: in :size: S
 ==c2==
@@ -31,9 +31,9 @@
 ==c3==
 :exhaust:	:cycler_: in :size: S, M, L
 ==nc1==
-No :cycler: in group: -1 delay
+No :cycler_: in group: -1 delay
 ==nc2==
-No :cycler: in group: -1 :exhaust:
+No :cycler_: in group: -1 :exhaust:
 ==/==
 ************ EVENTS (SLOW) ************** 
 ==strolling==
@@ -101,7 +101,7 @@ Avoid one permanent :exhaust:
 ==outsmart==
 :skill: check: +1 :burst: this phase
 ==undiscard==
-Discard this card if required to discard a card, draw a card from the :slow: deck.
+Discard this card if required to discard a card, draw two from the :slow: deck, keep one and shuffle the other back.
 ==cc==
 Copy the effect of a card another player just played.
 You don't have to share groups.
@@ -110,6 +110,8 @@ Counter the effect of a card played by another player.
 You don't have to share groups.
 ==gamble==
 Draw three cards from the :slow: deck, keep one of them, shuffle the others back into the deck.
+==join==
+When in position, join a breakaway
 ==/==
 ************ STAGE TEXTS **************
 ==flat_departure_tour==

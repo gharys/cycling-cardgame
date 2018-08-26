@@ -1,0 +1,10 @@
+heading,player,pcolor,pickup,title,description,speed_icon
+{1},{c0},#fff,{sprintbonus},Strolling,{strolling},icons/vslow.svg
+{2},{c0},#fff,{overmax},Strolling,{strolling},icons/vslow.svg
+{1},{c0},#fff,{sprintcheck+1},Strolling,{strolling},icons/vslow.svg
+{2},{c0},#fff,{blocking},Strolling,{strolling},icons/vslow.svg
+{3},{c0},#fff,{no-effect},Strolling,{strolling},icons/vslow.svg
+{1},{c0},#fff,{no-effect},Strolling,{strolling},icons/vslow.svg
+{2},{c0},#fff,{no-effect},Strolling,{strolling},icons/vslow.svg
+{1},{c0},#fff,{inspire},Strolling,{strolling},icons/vslow.svg
+{4},{c1},#fde,xxx,title,yyy,icons/brisk.svg

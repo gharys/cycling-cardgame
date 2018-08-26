@@ -1,0 +1,19 @@
+name,stamina,sprint,climb,skill,text,art
+Peter 'Terminator',5,6,4,6,Sprint: :d6:<br>Time trial: :d6:<br>Recovery checks: :+1d:,cyclists/cyclist-magenta.png
+Chris 'Vroom',5,4,6,5,Time trial: :d6: :d5:<br>Mountain stage: :d6: :+1d: :+1d:,cyclists/cyclist.png
+Small breakaway,5,5,5,5,Size: small<br><br>Appear: to join a rider:  :skill: 8,cyclists/escape.png
+Medium breakaway,6,6,4,6,Size: medium<br><br>Appear: to join a rider:  :skill: 6,cyclists/escape.png
+Large breakaway,7,7,3,5,Size: large<br><br>Appear: to join a rider:  :skill: 4,cyclists/escape.png
+Chasing peloton,8,7,3,*,{chasing_peloton},cyclists/peloton.png
+Chasing peloton,8,7,3,*,{chasing_peloton},cyclists/peloton.png
+Chasing peloton,8,7,3,*,{chasing_peloton},cyclists/peloton.png
+Controlling peloton,6,7,3,*,{peloton},cyclists/peloton.png
+Idle Peloton,4,7,3,*,{peloton},cyclists/peloton.png
+Man-of-the-day breakaway,6,5,7,*,Size: medium,cyclists/escape.png
+Laggers group,5,4,5,*,Size: small,cyclists/escape.png
+Laggers group,5,4,5,*,Size: small,cyclists/escape.png
+Grupetto,3,3,3,*,"Size: very large<br><br>No breakaways, dropouts abandon race",cyclists/escape.png
+Rouleurs breakaway,7,6,6,*,Size: small<br><br>Appear: to join a rider:  :skill: 8,cyclists/escape.png
+Climbers breakaway,5,4,7,*,Size: small<br><br>Appear: to join a rider:  :climb: 6,cyclists/escape.png
+Puncheur breakaway,6,6,6,*,Size: very small<br><br>Appear: to join a rider:  :skill: 7 and :burst: 7,cyclists/puncheur.png
+Adventurer breakaway,6,4,5,*,Size: very small<br><br>Appear: to join a rider:  :skill: 8 and :burst: 6,cyclists/puncheur.png

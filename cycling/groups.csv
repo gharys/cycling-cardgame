@@ -1,0 +1,26 @@
+name,stamina,sprint,climb,size,speed,text,art
+Small breakaway,6,5,5,S,brisk,{small_group},cyclists/breakaway.png
+Small breakaway,6,6,5,S,brisk,{small_group},cyclists/breakaway.png
+Small breakaway,6,5,6,S,brisk,{small_group},cyclists/breakaway.png
+Small breakaway,6,5,5,S,brisk,{small_group},cyclists/breakaway.png
+Medium breakaway,7,6,5,M,brisk,{medium_group},cyclists/breakaway.png
+Medium breakaway,7,6,6,M,brisk,{medium_group},cyclists/breakaway.png
+Medium breakaway,7,5,6,M,brisk,{medium_group},cyclists/breakaway.png
+Medium breakaway,7,6,6,M,brisk,{medium_group},cyclists/breakaway.png
+Large breakaway,10,7,6,L,brisk,{large_group},cyclists/breakaway.png
+Large breakaway,10,7,5,L,brisk,{large_group},cyclists/breakaway.png
+Adventurer,6,4,4,:cycler:,brisk,,cyclists/puncheur.png
+Man-of-the-day,6,5,7,S,brisk,,cyclists/breakaway.png
+Rouleurs breakaway,7,6,6,S,brisk,,cyclists/breakaway.png
+Climbers breakaway,5,4,7,M,brisk,,cyclists/breakaway.png
+Climbers breakaway,5,4,7,M,brisk,,cyclists/breakaway.png
+Puncheur,6,6,5,:cycler:,brisk,,cyclists/puncheur.png
+Rouleur,6,5,6,:cycler:,brisk,,cyclists/puncheur.png
+Chasing peloton,:inf:,7,3,XL,fast,{chasing_peloton},cyclists/peloton.png
+Chasing peloton,:inf:,7,3,XL,fast,{chasing_peloton},cyclists/peloton.png
+Chasing peloton,:inf:,7,3,XL,fast,{chasing_peloton},cyclists/peloton.png
+Controlling peloton,:inf:,7,3,XL,fast,{peloton},cyclists/peloton.png
+Idle Peloton,:inf:,7,3,XL,slow,{peloton},cyclists/peloton.png
+Laggers group,1,4,5,S,brisk,Size: small,cyclists/breakaway.png
+Laggers group,1,4,5,S,brisk,Size: small,cyclists/breakaway.png
+Grupetto,3,3,3,XL,vslow,"Size: very large<br><br>No breakaways, dropouts abandon race",cyclists/breakaway.png

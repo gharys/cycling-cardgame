@@ -1,0 +1,252 @@
+==/==
+************ HEADINGS FOR RANDOM CARDS **************
+==1==
+ 
++3 delay
+==2==
+ 
++2 delay
+==3==
+ 
++1 delay
+==4==
+ :exhaust: 
++1 delay	
+==5==
+:exhaust: :exhaust: 
++1 delay	
+==6==
+ :exhaust: 
+==7==
+:exhaust: :exhaust:
+==8==
+:exhaust: :exhaust: :exhaust:
+==/==
+************ PLAYER CONTRIBUTIONS TO GROUPS ************** 
+==c0== 
+==c1==
+:exhaust:	:cycler_: in :size: S
+==c2==
+:exhaust:	:cycler_: in :size: S, M
+==c3==
+:exhaust:	:cycler_: in :size: S, M, L
+==nc1==
+No :cycler: in group: -1 delay
+==nc2==
+No :cycler: in group: -1 :exhaust:
+==/==
+************ EVENTS (SLOW) ************** 
+==strolling==
+-- :cycler: breakaway opportunity
+==/==
+************ CARD PICKUP BONUS **************
+==no-effect==
+No effect.
+<span font="6">Cannot be bought. If drawn, may be used to buy an event card.</span>
+==sprintbonus==
+:sprint: contest: add :+1d:
+==sprintcheck+1==
+:sprint: check: +1
+==overmax==
+Gain :exhaust: over max :stamina:
+==blocking==
+<i>Blocking</i>: -1 to :speed-base:
+
+One event, play before draw
+==inspire==
+<i>Inspire</i>: +1 to group :speed-base:
+
+One event, play before draw
+==regen==
+:stamina: check: remove 1 :exhaust:
+==stamcheck+1==
+:stamina: check: +1
+==skillcheck+1==
+:skill: check: +1
+==climbcheck+1==
+:climb: check: +1
+==counterevent==
+Discard a card, counter an event.
+==breakaway==
+Reroll breakaway :skill: check
+<i>or</i> override :cycler: alone or not
+<i>or</i> redraw any breakaway draw
+==reroll==
+Discard a card, reroll any :+1d:
+==avoid==
+Discard a card, avoid any mishap
+==climbluck==
+Reroll a :climb: :d1:
+==stamluck==
+Reroll a :stamina: :d1:
+==burst==
+Reroll a :burst: :d1:
+==sneaky==
+<i>Sneaky</i>
+Discard a card, avoid 1 :exhaust: from an event card in a group 
+==fastnotsmart==
+Use :burst: check instead of :skill: check
+==strongnotsmart==
+Use :stamina: check instead of :skill: check
+==smarts==
+Change any one :+1d: into a :skill: dice
+
+Can only be used in a contest.
+==whenitcounts==
+When alone, avoid one :exhaust:
+==recuperate==
+Avoid one permanent :exhaust:
+==goodrythm==
+:exhaust:: +1 :climb: this phase
+==outsmart==
+:skill: check: +1 :burst: this phase
+==undiscard==
+Discard this card if required to discard a card, draw a card from the :slow: deck.
+==cc==
+Copy the effect of a card another player just played.
+You don't have to share groups.
+==counter==
+Counter the effect of a card played by another player.
+You don't have to share groups.
+==gamble==
+Draw three cards from the :slow: deck, keep one of them, shuffle the others back into the deck.
+==/==
+************ STAGE TEXTS **************
+==flat_departure_tour==
+<span foreground="blue">Delay counters: </span>minutes (black)
+
+<span foreground="blue">Actions: </span>
+Start with a 'idle peloton'
+Do 5 times:
+-- If there is no breakaway from the early deck (-2 delay)
+   Discard a large breakaway
+-- Draw an event card
+==flat_contest==
+<span foreground="blue">Cardinal skill: </span>:stamina:
+
+<span foreground="blue">Delay counters: </span>minutes (black)
+
+<span foreground="blue">Actions: </span>
+Any peloton becomes 'chasing peloton'
+Do 5 times:
+-- If there is no breakaway from the late deck (-1 delay)
+   Discard any breakaway larger then 'small'
+-- Draw an event card 
+==flat_finale==
+<span foreground="blue">Cardinal skill: </span>:burst:
+
+<span foreground="blue">Delay counters: </span>10 seconds (white)
+
+<span foreground="blue">Actions: </span>
+Any peloton becomes 'chasing peloton'
+Do 5 times:
+-- Draw an event card
+Then: sprint
+ 
+==peloton==
+==chasing_peloton==
+==large_group==
+<span foreground="blue">Appear:</span>:
+Join any :cycler: in position with :skill: check 
+==medium_group==
+<span foreground="blue">Size:</span>: medium
+
+<span foreground="blue">Appear:</span>:
+Any :cycler: in position by matching :skill: 6
+<span foreground="blue" size="large">Dropout</span>
+In the event of dropouts, use a 'Laggers group'
+==small_group==
+Size: Small
+
+<span foreground="blue">Appear:</span>:
+Any :cycler: in position by matching :skill: 7
+==nothing==
+<span foreground="blue" size="large">Nothing noteworthy happens...</span>
+
+So, any :cycler: may break away:
+-- overmatch the group speed, pay any extra :exhaust:
+-- make a :skill: check (fail: group catches up)
+-- if this roll is :d1: you are always alone
+-- else, draw basic breakaway card (smaller joins)
+	-- it has as much exhaust then the original group
+	-- other :cycler:: match :skill: check
+==sidewinds==
+<span foreground="blue" size="large">Sidewinds!</span>
+
+:flat: if played on a peloton:
+Split the peloton in two 'Chasing peloton's
+The second has +1 delay.
+
+Put :cycler: from peloton who fail :skill:+1 check in the second peloton, others choose.
+
+If at any time no gap is left, restore the original peloton
+==thinning_group==
+<span foreground="blue" size="large">Thinning out the group!</span>
+
+:mountains: :hills: Execute :climb: conditions one more time, -1 delay 
+==treacherous_slope==
+<span foreground="blue" size="large">A treacherous slope.</span>
+
+ :mountains: Execute :climb: conditions one more time, -1 delay
+==breakaway==
+<span foreground="blue" size="large">A breakaway!</span>
+
+Ignore this for :vslow: pelotons, or with more than 2 delay. 
+
+Draw a basic breakaway card, if it is smaller:
+-- put it on the table with one less delay 
+-- and as also one less :exhaust:
+ 
+:p2: :p3: if the first breakaway is too large, draw another
+==peloton_gains==
+<span foreground="blue" size="large">A team shows itself!</span>
+
+:flat: :hills: If this is a peleton, remove one delay.
+==confusion==
+<span foreground="blue" size="large">A miscommunication!</span>
+
+Every player discards a card
+==tactical_opening==
+<span foreground="blue" size="large">An opportunity!</span>
+
+Every player draws a card
+==chasing==
+<span foreground="blue" size="large">A team decides to push</span>
+
+Turn a peloton into a 'chasing peloton'.
+Ignore for the 'grupetto', and if there is no breakaway
+==feed_break==
+<span foreground="blue" size="large">Eating time.</span>
+
+Only in phase :p1:: The peloton turns into an 'idle peloton' for one turn.
+==peloton_problems==
+<span foreground="blue" size="large">Problems in the peloton.</span>
+
+If played on a peloton:
+-- Split a peloton in two peloton's.
+-- The second one is a 'Chasing peloton' and has 2 min. delay
+-- Roll :+1d: for each :cycler:: 
+	:-: :d1: :d2: :d3:: he's in the latter, otherwise choose    
+:finale: the organization nullifies this time difference
+==flat_tire==
+<span foreground="blue" size="large">A flat tire! (mishap)</span>
+
+A random :rider: in this group has a flat tire. Put him 1 min. behind the current group.  
+==fall==
+<span foreground="blue" size="large">A fall! (mishap)</span>
+
+Each :cycler: makes a :skill: +2 check (:d6: fails always):
+If this fails, roll :+1d:
+:d1: :d2: :d3:: put rider 2 min. behind,
+:d4: :d5:: ... and put a permanent exhaust counters.
+:d6:: take the rider out of the race
+1 penalty to both rolls in case of: :finale: or mountain descent.
+==second_breath==
+<span foreground="blue" size="large">A second breath.</span>
+
+Remove one :exhaust: from this group.
+==headwinds==
+<span foreground="blue" size="large">Strong headwinds!</span>
+
+:flat: :hills: Evaluate text in yellow twice for :size: S, XS
+

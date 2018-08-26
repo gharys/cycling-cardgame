@@ -1,0 +1,66 @@
+# Based on hand.yml
+all:
+  x: 0
+  y: 0
+  width:  825
+  height:  1125
+
+title:
+  x: 75
+  y: 75
+  width: 675
+  height: 125
+  align: center
+art:
+  x: 275
+  y: 225
+  width: 455
+  height: 455
+  width: :scale
+description:
+  x: 275
+  y: 725
+  width: 475
+  height: 200
+  font_size: 6
+snark:
+  x: 275
+  y: 950
+  width: 475
+  height: 100
+bonus1:
+  x: 125
+  y: 150
+  width:  100
+  height: 100
+bonus2:
+  extends: bonus1
+  x: 75
+  y: += 123
+  width:  175
+  height: 175
+bonus3:
+  extends: bonus2
+  y: += 198
+bonus4:
+  extends: bonus3
+  y: += 198
+bonus5:
+  extends: bonus4
+  y: += 198
+
+# The "cut line", without rounded corners
+cut:
+  x: 37.5
+  y: 37.5
+  width: 750
+  height: 1050
+
+# The "safe zone" as defined by TheGameCrafter poker cards
+safe:
+  x: 75
+  y: 75
+  width: 675
+  height: 975
+  radius: 16
+  dash: 3 3

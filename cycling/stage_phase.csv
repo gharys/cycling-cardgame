@@ -1,0 +1,4 @@
+title,type,icon,phase,art,text
+Flat stage departure,flat,road,private,stages/Flat_stage_departure.png,{flat_departure_tour}
+Flat stage contest,"tour, flat",road,corporal,stages/Flat_stage_mid.png,{flat_contest}
+Flat stage finale,"tour, flat",road,checkered-flag,stages/Flat_stage_sprint.png,"Do 3 times, 1 km. each:<br><br>From the lead group, make check :+1d:<br>:d1: :d2: No breakaway attempt.<br>:d3: Put 'small breakaway' on table.<br>:d4: Put 'rouleurs breakaway' on table.<br>:d5: Put 'adventurer breakaway' on table.<br>:d6: Put 'puncheur breakaway' on table;<br>With initially 10 sec. ahead<br><br>Finally: sprint with lead group(s)."

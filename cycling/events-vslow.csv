@@ -25,9 +25,9 @@ heading,player,pickup,title,description
 {1},,{whenitcounts},Strolling,{strolling}
 {1},,{recuperate},Strolling,{strolling}
 {2},,{goodrythm},Strolling,{strolling}
-{1},,{outsmart},Strolling,{strolling}
-{2},,{undiscard},Strolling,{strolling}
-{3},,{cc},Strolling,{strolling}
-{1},,{counter},Strolling,{strolling}
-{2},,{gamble},Strolling,{strolling}
-{1},,{join},Strolling,{strolling}
+{1},,{outsmart},Stage special,{stage_special}
+{2},,{undiscard},Stage special,{stage_special}
+{3},,{cc},Stage special,{stage_special}
+{1},,{counter},Stage special,{stage_special}
+{2},,{gamble},Stage special,{stage_special}
+{1},,{join},Stage special,{stage_special}

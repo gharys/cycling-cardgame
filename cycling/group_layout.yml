@@ -14,15 +14,15 @@ title:
 art:
   x: 275
   y: 225
-  width: 255
-  height: 255
+  width: 675
+  height: 225
   width: :scale
 description:
   x: 275
-  y: 525
+  y: 500
   width: 475
-  height: 400
-  font_size: 6
+  height: 430
+  font_size: 8
 snark:
   x: 275
   y: 950

@@ -117,7 +117,7 @@ One event, play before draw
 :climb: check: +1
 ==counterevent==
 Discard a card, counter an event.
-==breakaway==
+==break==
 Reroll breakaway :skill: check
 <i>or</i> override :cycler: alone or not
 <i>or</i> redraw any breakaway draw
@@ -151,7 +151,7 @@ Avoid one permanent :exhaust:
 ==outsmart==
 :skill: check: +1 :burst: this phase
 ==undiscard==
-Discard this card if required to discard a card, draw two from the :slow: deck, keep one and shuffle the other back.
+If required to discard a card: instead draw two from the :slow: deck, keep one and shuffle the other back.
 ==cc==
 Copy the effect of a card another player just played.
 You don't have to share groups.
@@ -170,8 +170,11 @@ When in position, join a breakaway
 <span foreground="blue">Actions: </span>
 Start with a 'idle peloton'
 Do 5 times:
--- If there is no breakaway from the early deck (-2 delay)
-   Discard a large breakaway
+-- No breakaway? 
+   -- Draw early breakaway
+   -- Discard if :size: L
+   -- Delay peloton 1 min. (black)
+-- Switch to 'controlling peloton' on 5+ delay
 -- Draw an event card
 ==flat_contest==
 <span foreground="blue">Cardinal skill: </span>:stamina:

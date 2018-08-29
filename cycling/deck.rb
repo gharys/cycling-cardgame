@@ -3,7 +3,7 @@ require 'game_icons'
 require 'game_icons/icon'
 
 image_text_size_8 = 36
-image_text_size_12 = 52
+image_text_size_12 = 50
 
 $snippets = Hash.new(0)
 File.open("card_texts.txt", "r") do |f|
@@ -29,6 +29,8 @@ $stamina = GameIcons.get("hearts").
                 recolor(fg: 'f00', bg_opacity: 0).string                                
 $exhaust = GameIcons.get("heart-minus").
                 recolor(fg: 'e0e', bg_opacity: 0).string                                
+$skill = GameIcons.get("detour").
+                recolor(fg: '0b0', bg_opacity: 0).string                                
 $d1 = GameIcons.get("dice-six-faces-one").
                 recolor(fg: '000', bg: 'fff').string
 $d2 = GameIcons.get("dice-six-faces-two").
@@ -203,43 +205,45 @@ Squib::Deck.new cards: data['title'].size, layout: 'stage_phase_layout.yml',
 end
               
 
-data = Squib.csv file: 'events.csv'
-data['heading'].each { |s| text_sub(s) }
-data['description'].each { |s| text_sub(s) }
-data['pickup'].each { |s| text_sub(s) }
-pcolors = Array.new(data["heading"].size(), "#fff")
-for i in (0...pcolors.length)
-  s = data['player'][i]
-  if s.nil?
-    pcolors[i] = "#fff"
-  elsif s.start_with? "{c"
-    pcolors[i] = "#fde"
-  elsif s.start_with? "{nc"
-    pcolors[i] = "#2F2"
-  else
-    pcolors[i] = "#fde"
-  end
-end
-data['player'].each { |s| text_sub(s) }
 
-
-Squib::Deck.new cards: data['heading'].size, layout: 'event_layout.yml',
-              width: 825, height: 1125 do
-  background color: 'white'
-  rect layout: 'cut' # cut line as defined by TheGameCrafter
-  rect layout: 'safe' # safe zone as defined by TheGameCrafter
+for event_type in ['vslow'] do
   
-  text str: data["title"], layout: 'title'
-  rect layout: 'heading', fill_color: 'yellow', stroke_color: 'yellow'
-  text(str: data['heading'], layout: 'heading', markup: true)   { |e| images(e, image_text_size_12) }
-  rect layout: 'player', fill_color: pcolors, stroke_color: pcolors
-  text(str: data['player'], layout: 'player', markup: true)   { |e| images(e, image_text_size_12) }
-  text(str: data['description'], layout: 'description', markup: true)   { |e| images(e, image_text_size_8) }
-  rect layout: 'extrabox'
-  svg data: $hand, layout: 'icon'
-  svg file: data['speed_icon'], layout: 'lower_right', height: :scale
-  text(str: data['pickup'], layout: 'extra', markup: true)   { |e| images(e, image_text_size_8) }
-  save_png prefix: "event_"
+  data = Squib.csv file: "events-#{event_type}.csv"
+  data['heading'].each { |s| text_sub(s) }
+  data['description'].each { |s| text_sub(s) }
+  data['pickup'].each { |s| text_sub(s) }
+  pcolors = Array.new(data["heading"].size(), "#fff")
+  for i in (0...pcolors.length)
+    s = data['player'][i]
+    if s.nil?
+      pcolors[i] = '#fff'
+    elsif s.start_with? "{c"
+      pcolors[i] = '#fde'
+    elsif s.start_with? "{nc"
+      pcolors[i] = '#2F2'
+    else
+      pcolors[i] = '#fde'
+    end
+  end
+  
+  Squib::Deck.new cards: data['heading'].size, layout: 'event_layout.yml',
+                width: 825, height: 1125 do
+    background color: 'white'
+    rect layout: 'cut' # cut line as defined by TheGameCrafter
+    rect layout: 'safe' # safe zone as defined by TheGameCrafter
+    
+    text str: data["title"], layout: 'title'
+    rect layout: 'heading', fill_color: 'yellow', stroke_color: 'yellow'
+    text(str: data['heading'], layout: 'heading', markup: true)   { |e| images(e, image_text_size_12) }
+    rect layout: 'player', fill_color: pcolors, stroke_color: pcolors
+    text(str: data['player'], layout: 'player', markup: true)   { |e| images(e, image_text_size_12) }
+    text(str: data['description'], layout: 'description', markup: true)   { |e| images(e, image_text_size_8) }
+    rect layout: 'extrabox'
+    svg data: $hand, layout: 'icon'
+    svg file: "icons/#{event_type}.svg", layout: 'lower_right', height: :scale
+    text(str: data['pickup'], layout: 'extra', markup: true)   { |e| images(e, image_text_size_8) }
+    save_png prefix: "event_#{event_type}_"
+  end
 end
 
 

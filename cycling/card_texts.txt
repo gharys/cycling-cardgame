@@ -22,6 +22,56 @@
 ==8==
 :exhaust: :exhaust: :exhaust:
 ==/==
+************  CONTEST COMBINATIONS ***************
+==cc1==
+:sprint:  :stamina:  :climb:  :skill:
+==cc2==
+:sprint:  :stamina:  :skill:  :climb:
+==cc3==
+:sprint:  :climb:  :stamina:  :skill:
+==cc4==
+:sprint:  :climb:  :skill:  :stamina:
+==cc5==
+:sprint:  :skill:  :climb:  :stamina:
+==cc6==
+:sprint:  :skill:  :stamina:  :climb:
+==cc7==
+:stamina:  :sprint:  :climb:  :skill:
+==cc8==
+:stamina:  :sprint:  :skill:  :climb:
+==cc9==
+:stamina:  :climb:  :skill:  :sprint:
+==cc10==
+:stamina:  :climb:  :sprint:  :skill:
+==cc11==
+:stamina:  :skill:  :climb:  :sprint:
+==cc12==
+:stamina:  :skill:  :sprint:  :climb:
+==cc13==
+:climb:  :stamina:  :skill:  :sprint:
+==cc14==
+:climb:  :stamina:  :sprint:  :skill:
+==cc15==
+:climb:  :skill:  :stamina:  :sprint:
+==cc16==
+:climb:  :skill:  :sprint:  :stamina:
+==cc17==
+:climb:  :sprint:  :stamina:  :skill:
+==cc18==
+:climb:  :sprint:  :skill:  :stamina:
+==cc19==
+:skill:  :stamina:  :climb:  :sprint:
+==cc20==
+:skill:  :stamina:  :sprint:  :climb:
+==cc21==
+:skill:  :climb:  :stamina:  :sprint:
+==cc22==
+:skill:  :climb:  :sprint:  :stamina:
+==cc23==
+:skill:  :sprint:  :stamina:  :climb:
+==cc24==
+:skill:  :sprint:  :climb:  :stamina:
+==/==
 ************ PLAYER CONTRIBUTIONS TO GROUPS ************** 
 ==c0==
 ==c1==

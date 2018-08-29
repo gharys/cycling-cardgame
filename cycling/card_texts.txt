@@ -13,11 +13,8 @@
  :exhaust: 
 +1 delay	
 ==5==
-:exhaust: :exhaust: 
-+1 delay	
-==6==
  :exhaust: 
-==7==
+==6==
 :exhaust: :exhaust:
 ==8==
 :exhaust: :exhaust: :exhaust:
@@ -35,9 +32,76 @@ No :cycler_: in group: -1 delay
 ==nc2==
 No :cycler_: in group: -1 :exhaust:
 ==/==
-************ EVENTS (SLOW) ************** 
+************ EVENTS (VSLOW) ************** 
 ==strolling==
 -- :cycler: breakaway opportunity
+==stage_special==
+<i>If there is a stage special, play it now.</i>
+
+Otherwise:
+:cycler: breakaway opportunity
+==/==
+************ EVENTS (SLOW) ************** 
+==noevent==
+-- :cycler: breakaway opportunity
+==chasing==
+Turn a peloton into a 'chasing peloton'.
+Ignore for the 'grupetto', and if there is no breakaway
+==fall_slow==
+<i>Mishap</i>
+
+:cycler:: make a check (:d6: fails):
+Then a :skill:+1 check (:d6: always fails).
+
+If both fail, roll :+1d:
+:d1: :d2: :d3:: :exhaust:
+:d4:: :exhaust: :exhaust:
+:d5:: :exhaust: :permanent-exhaust:
+:d6:: take the rider out of the race
+==sidewinds==
+:flat: if played on main peloton:
+-- Split peloton in 2x 'Chasing peloton'
+-- The second has +1 delay.
+-- :cycler: make :skill:-1 check; 
+  -- fail: place in 2nd peloton, 
+  -- others in front.
+  
+If peletons merge, restore original peloton
+==breakaway==
+:p2: :p3: If 2 or less delay from front group:
+
+Draw a breakaway card:
+-- :size: must be smaller 
+-- 10s (white) in front, 
+-- 2 less :exhaust:
+==provisioning==
+Peloton only: -1 delay
+==/==
+************ EVENTS (BRISK) ************** 
+==fall_brisk==
+<i>Mishap</i>
+
+:cycler:: make a check (:d6: fails):
+Then a :skill:+1 check (:d6: always fails).
+
+If both fail, roll :+1d:
+:d1: :exhaust:
+:d2: :d3:: :exhaust: :exhaust: :exhaust:
+:d4: :d5:: :exhaust: :exhaust: :permanent-exhaust:
+:d6:: take the rider out of the race
+Also, delay 2 minutes
+==flat_tire==
+All :rider:: Roll :+1d: :+1d:
+Lowest roll under 5: delay: +1
+May be transferred to team mate.
+==peloton_gains==
+:flat: :hills: If this is a peloton, remove one delay.
+==second_breath==
+Remove one :exhaust: from this group.
+==strong_winds==
+:size: S, M, :cycler:: :exhaust:
+==thinning_group==
+:mountains: :hills: Execute :climb: conditions one more time, -1 delay 
 ==/==
 ************ CARD PICKUP BONUS **************
 ==no-effect==
@@ -118,14 +182,15 @@ When in position, join a breakaway
 <span foreground="blue">Delay counters: </span>minutes (black)
 
 <span foreground="blue">Actions: </span>
-Start with a 'idle peloton'
-Do 5 times:
--- No breakaway? 
-   -- Draw early breakaway
-   -- Discard if :size: L
-   -- Delay peloton 1 min. (black)
+-- Start with a 'idle peloton'
+-- Draw 5 event cards
+
+<span foreground="blue">Rules: </span>
+-- discard any breakaway :size: L
+-- draw breakaway if there is none:
+	-- 1 min. in front
+	-- :cycler: penalty -1 to join
 -- Switch to 'controlling peloton' on 5+ delay
--- Draw an event card
 ==flat_contest==
 <span foreground="blue">Cardinal skill: </span>:stamina:
 
@@ -147,7 +212,8 @@ Any peloton becomes 'chasing peloton'
 Do 5 times:
 -- Draw an event card
 Then: sprint
- 
+==/==
+************ GROUP TEXTS ************** 
 ==peloton==
 ==chasing_peloton==
 ==large_group==
@@ -165,6 +231,8 @@ Size: Small
 
 <span foreground="blue">Appear:</span>:
 Any :cycler: in position by matching :skill: 7
+==/==
+************ OLD EVENT TEXTS ************** 
 ==nothing==
 <span foreground="blue" size="large">Nothing noteworthy happens...</span>
 
@@ -175,16 +243,6 @@ So, any :cycler: may break away:
 -- else, draw basic breakaway card (smaller joins)
 	-- it has as much exhaust then the original group
 	-- other :cycler:: match :skill: check
-==sidewinds==
-<span foreground="blue" size="large">Sidewinds!</span>
-
-:flat: if played on a peloton:
-Split the peloton in two 'Chasing peloton's
-The second has +1 delay.
-
-Put :cycler: from peloton who fail :skill:+1 check in the second peloton, others choose.
-
-If at any time no gap is left, restore the original peloton
 ==thinning_group==
 <span foreground="blue" size="large">Thinning out the group!</span>
 
@@ -193,20 +251,6 @@ If at any time no gap is left, restore the original peloton
 <span foreground="blue" size="large">A treacherous slope.</span>
 
  :mountains: Execute :climb: conditions one more time, -1 delay
-==breakaway==
-<span foreground="blue" size="large">A breakaway!</span>
-
-Ignore this for :vslow: pelotons, or with more than 2 delay. 
-
-Draw a basic breakaway card, if it is smaller:
--- put it on the table with one less delay 
--- and as also one less :exhaust:
- 
-:p2: :p3: if the first breakaway is too large, draw another
-==peloton_gains==
-<span foreground="blue" size="large">A team shows itself!</span>
-
-:flat: :hills: If this is a peleton, remove one delay.
 ==confusion==
 <span foreground="blue" size="large">A miscommunication!</span>
 
@@ -220,10 +264,6 @@ Every player draws a card
 
 Turn a peloton into a 'chasing peloton'.
 Ignore for the 'grupetto', and if there is no breakaway
-==feed_break==
-<span foreground="blue" size="large">Eating time.</span>
-
-Only in phase :p1:: The peloton turns into an 'idle peloton' for one turn.
 ==peloton_problems==
 <span foreground="blue" size="large">Problems in the peloton.</span>
 
@@ -233,25 +273,4 @@ If played on a peloton:
 -- Roll :+1d: for each :cycler:: 
 	:-: :d1: :d2: :d3:: he's in the latter, otherwise choose    
 :finale: the organization nullifies this time difference
-==flat_tire==
-<span foreground="blue" size="large">A flat tire! (mishap)</span>
-
-A random :rider: in this group has a flat tire. Put him 1 min. behind the current group.  
-==fall==
-<span foreground="blue" size="large">A fall! (mishap)</span>
-
-Each :cycler: makes a :skill: +2 check (:d6: fails always):
-If this fails, roll :+1d:
-:d1: :d2: :d3:: put rider 2 min. behind,
-:d4: :d5:: ... and put a permanent exhaust counters.
-:d6:: take the rider out of the race
-1 penalty to both rolls in case of: :finale: or mountain descent.
-==second_breath==
-<span foreground="blue" size="large">A second breath.</span>
-
-Remove one :exhaust: from this group.
-==headwinds==
-<span foreground="blue" size="large">Strong headwinds!</span>
-
-:flat: :hills: Evaluate text in yellow twice for :size: S, XS
 

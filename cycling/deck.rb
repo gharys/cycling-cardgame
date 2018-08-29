@@ -2,8 +2,9 @@ require 'squib'
 require 'game_icons'
 require 'game_icons/icon'
 
-image_text_size_8 = 36
-image_text_size_12 = 50
+image_text_size_6 = 26
+image_text_size_8 = 34
+image_text_size_12 = 52
 
 $snippets = Hash.new(0)
 File.open("card_texts.txt", "r") do |f|
@@ -29,6 +30,8 @@ $stamina = GameIcons.get("hearts").
                 recolor(fg: 'f00', bg_opacity: 0).string                                
 $exhaust = GameIcons.get("heart-minus").
                 recolor(fg: 'e0e', bg_opacity: 0).string                                
+$permanent_exhaust = GameIcons.get("heart-minus").
+                recolor(fg: 'e0e', bg: '000').string                                
 $skill = GameIcons.get("detour").
                 recolor(fg: '0b0', bg_opacity: 0).string                                
 $d1 = GameIcons.get("dice-six-faces-one").
@@ -79,6 +82,7 @@ def images(embed, size)
   embed.svg key: ':climb:', data: $climb, width: size, height: size
   embed.svg key: ':stamina:', data: $stamina, width: size, height: size
   embed.svg key: ':exhaust:', data: $exhaust, width: size, height: size
+  embed.svg key: ':permanent-exhaust:', data: $permanent_exhaust, width: size, height: size
   embed.svg key: ':skill:', data: $skill, width: size, height: size
   embed.svg key: ':d1:', data: $d1, width: size, height: size
   embed.svg key: ':d2:', data: $d2, width: size, height: size
@@ -196,7 +200,7 @@ Squib::Deck.new cards: data['title'].size, layout: 'stage_phase_layout.yml',
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
   
   text str: data['title'], layout: 'title'
-  text(str: data['text'], layout: 'description', markup: true)   { |e| images(e, image_text_size_8) }
+  text(str: data['text'], layout: 'description', markup: true)   { |e| images(e, image_text_size_6) }
   text str: data['type'], layout: 'type'
   svg data: data['icon'], layout: 'lower_left'
   svg data: data['phase'], layout: 'lower_right'
@@ -206,7 +210,7 @@ end
               
 
 
-for event_type in ['vslow'] do
+for event_type in ['vslow', 'slow', 'brisk'] do
   
   data = Squib.csv file: "events-#{event_type}.csv"
   data['heading'].each { |s| text_sub(s) }
@@ -225,6 +229,7 @@ for event_type in ['vslow'] do
       pcolors[i] = '#fde'
     end
   end
+  data['player'].each { |s| text_sub(s) }
   
   Squib::Deck.new cards: data['heading'].size, layout: 'event_layout.yml',
                 width: 825, height: 1125 do
@@ -247,13 +252,14 @@ for event_type in ['vslow'] do
 end
 
 
-data = Squib.csv file: 'backgrounds.csv'
-Squib::Deck.new cards: data['art'].size, layout: 'background_layout.yml',
+data = Squib.csv file: 'back.csv'
+Squib::Deck.new cards: data['art'].size, layout: 'back_layout.yml',
             width: 825, height: 1125 do
   background color: 'white'
   rect layout: 'cut' # cut line as defined by TheGameCrafter
   rect layout: 'safe' # safe zone as defined by TheGameCrafter
 
-  png file: data['art'], layout: 'art'
-  save_png prefix: "bg_"
+  text str: data["title"], layout: 'title'
+  svg file: data['art'], layout: 'art'
+  save_png prefix: "back_"
 end

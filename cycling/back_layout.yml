@@ -5,12 +5,19 @@ all:
   width:  825
   height:  1125
 
+title:
+  x: 75
+  y: 175
+  width: 675
+  height: 125
+  align: center
+  font_size: 12
+
 art:
-  x: 150
+  x: 170
   y: 300
   width: 475
-  height: 475
-  width: :scale
+  height: :scale
 
 # The "cut line", without rounded corners
 cut:
